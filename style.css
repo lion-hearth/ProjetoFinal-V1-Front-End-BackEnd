@@ -150,4 +150,8 @@ body{
    .main-menu ul.right-nav li a {
       font-size: 18px !important;
   }
-  }
+
+  .navbar-brand {
+    font-family: 'Rethink Sans', sans-serif;
+    
+}

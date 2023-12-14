@@ -4,72 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     
     <header>
-        <div class="container">
-           <div class="row">
-              <div class="col-md-12 col-sm-12 col-lg-12 col-xl-3">
-                 <div class="logo">
-                    <a href="/" title="logo"> ALS </a>
-                 </div>
-                 <div class="mob-menu">
-                    <span>
-                       <i class="fa fa-bars"></i>
-                    </span>
-                 </div>
-              </div>
-              <div class="col-md-12 col-sm-12 col-lg-12 col-xl-9">
-                 <div class="main-menu">
-                    <ul class="nav">
-                       <li><a href="/"> Home </a> </li>
-                       <li><a href="#"> Sobre </a> </li>
-                      <li><a href="#"> Contato </a> </li>
-                       </ul>
-                    <ul class="right-nav">
-                        <li><a href="./login_page.html"> <i class="fa fa-user"></i> Fazer Login </a> </li>
-                      <li class="active"> <a href="#"> <i class="fa fa-sign-in"></i> Sair </a> </li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">ALS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
                     </ul>
-                 </div>
-              </div>
-           </div>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login_page.html">Fazer Login</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Sair</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+ <br>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-12 text-center mb-8">
+                <h2>Compartilhe sua sugestão para a melhoria do nosso ambiente de trabalho</h2>
+                <br>
+                <form>
+                    <div class="form-group">
+                        <label for="comment"></label>
+                        <textarea class="form-control" rows="5" id="comment" placeholder="Digite sua sugestão aqui"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
         </div>
-     </header>
-
-<div class="col-sm-12 text-center mb-4 mt-4">
-        
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-     <title>Bootstrap Example</title>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   </head>
-   <body>
-   
-   <div class="container">
-     <h2>Insira sua sugestão para melhorias do </h2>
-     <p>The form below contains a textarea for comments:</p>
-     <form>
-       <div class="form-group">
-         <label for="comment">Comment:</label>
-         <textarea class="form-control" rows="5" id="comment"></textarea>
-         </div>
-       </form>
-     </div>
-   
-     </body>        
-
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
