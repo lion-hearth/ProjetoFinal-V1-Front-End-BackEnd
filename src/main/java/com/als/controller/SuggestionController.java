@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Map;
-
 @Controller
 public class SuggestionController {
 
@@ -18,8 +16,7 @@ public class SuggestionController {
 
     @PostMapping("/api/suggestions")
     @ResponseBody
-    public ResponseEntity<String> submitSuggestion(@RequestBody Map<String, String> suggestion) {
-        String suggestionText = suggestion.get("suggestion");
+    public ResponseEntity<String> submitSuggestion(@RequestBody String suggestionText) {
         suggestionService.processSuggestion(suggestionText);
         return ResponseEntity.ok("Sugestão recebida com sucesso!");
     }

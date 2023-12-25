@@ -11,7 +11,7 @@ public class SugestaoController {
 
     @GetMapping
     public ModelAndView getList() {
-        ModelAndView mv = new ModelAndView("front/index"); // ou "index" dependendo da estrutura
+        ModelAndView mv = new ModelAndView("front/index");
         return mv;
     }
 }
