@@ -1,5 +1,5 @@
 package com.als.entity;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,7 +12,9 @@ public class Suggestion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 1000) // Defina o tamanho desejado
     private String text;
+
     private boolean approved;
 
     // Construtores, getters, setters, e outros métodos, se necessário

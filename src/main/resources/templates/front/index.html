@@ -56,37 +56,42 @@
             <form id="suggestionForm" method="post">
                 <div class="form-group">
                     <label for="comment"></label>
-                    <textarea class="form-control" rows="5" id="comment" name="suggestion" placeholder="Digite sua sugestão aqui"></textarea>
+                    <textarea class="form-control" rows="5" id="comment" name="suggestion" placeholder="Digite sua sugestão aqui" maxlength="500"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="button" class="btn btn-primary" onclick="submitSuggestion()">Enviar</button>
             </form>
         </div>
     </div>
 </div>
 
 <script>
-    document.getElementById("suggestionForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita o envio padrão do formulário
-        submitSuggestion();
-    });
-
     function submitSuggestion() {
         var suggestionText = document.getElementById("comment").value;
 
-        axios.post('/api/suggestions', suggestionText, {
-            headers: {
-                'Content-Type': 'text/plain'
-            }
-        })
-        .then(function (response) {
-            alert(response.data);
-            document.getElementById("suggestionForm").reset(); // Limpar o formulário
-        })
-        .catch(function (error) {
-            console.error(error);
-        });
+        // Verificar se o texto da sugestão está vazio
+        if (!suggestionText.trim()) {
+            alert("A sugestão não pode estar vazia.");
+            return;
+        }
+
+        // Verificar se o texto da sugestão excede o limite
+        var maxCharacters = 1000;
+        if (suggestionText.length > maxCharacters) {
+            alert("A sugestão excede o limite de caracteres permitido (máximo " + maxCharacters + " caracteres).");
+            return;
+        }
+
+        axios.post('/api/suggestions', suggestionText)
+            .then(function (response) {
+                alert(response.data);
+                document.getElementById("suggestionForm").reset(); // Limpar o formulário
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
     }
 </script>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

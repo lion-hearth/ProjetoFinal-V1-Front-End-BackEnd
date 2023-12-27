@@ -1,7 +1,7 @@
 package com.als.service;
 
 import com.als.entity.Suggestion;
-import com.als.repository.SuggestionRepository; // Importe a interface do repositório
+import com.als.repository.SuggestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,8 +39,13 @@ public class SuggestionServiceImpl implements SuggestionService {
 
     @Override
     public void processSuggestion(String suggestionText) {
-        Suggestion suggestion = new Suggestion();
-        suggestion.setText(suggestionText);
-        suggestionRepository.save(suggestion);
+        try {
+            Suggestion suggestion = new Suggestion();
+            suggestion.setText(suggestionText);
+            suggestionRepository.save(suggestion);
+        } catch (Exception e) {
+            // Registre a exceção ou uma mensagem de log
+            e.printStackTrace();
+        }
     }
 }
