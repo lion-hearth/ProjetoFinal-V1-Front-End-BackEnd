@@ -18,8 +18,11 @@ public class RegistrationController {
     @GetMapping("/register")
     public String showRegistrationPage(Model model) {
         model.addAttribute("user", new User());
-        return "registration_page";
+        return "register/registration"; // Atualizado para o novo nome do arquivo HTML
     }
+
+
+
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user) {

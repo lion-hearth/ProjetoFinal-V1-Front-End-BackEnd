@@ -1,0 +1,20 @@
+body {
+    background-color: #f8f9fa; /* Cor de fundo da página */
+}
+
+.container {
+    background-color: #ffffff; /* Cor de fundo do contêiner */
+    padding: 20px; /* Adiciona algum espaço ao redor do conteúdo dentro do contêiner */
+    border-radius: 8px; /* Adiciona bordas arredondadas ao contêiner */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao contêiner */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Cor de fundo do botão primário */
+    border-color: #007bff; /* Cor da borda do botão primário */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Cor de fundo do botão primário ao passar o mouse sobre ele */
+    border-color: #0056b3; /* Cor da borda do botão primário ao passar o mouse sobre ele */
+}
