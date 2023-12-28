@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Se você tiver um arquivo de estilo personalizado -->
+    <title>Cadastro de Administradores</title>
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <h2>Cadastro de Administradores</h2>
+            <form th:action="@{/register}" th:object="${user}" method="post">
+                <div class="form-group">
+                    <label for="username">Nome de Usuário:</label>
+                    <input type="text" class="form-control" id="username" th:field="*{username}" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" id="password" th:field="*{password}" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="isAdmin" th:field="*{admin}">
+                    <label class="form-check-label" for="isAdmin">Administrador</label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

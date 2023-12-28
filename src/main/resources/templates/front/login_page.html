@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login page</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-     
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <label for="username">Endereço de E-mail:</label>
+                    <input type="email" class="form-control" id="username" name="username" aria-describedby="emailHelp"
+                           placeholder="Insira seu e-mail" required>
+                    <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos sua senha com ninguém</small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Lembrar de mim</label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-
-<form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Endereço de E-mail </label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
-      <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos sua senha com ninguém</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Senha </label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-    </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Lembrar de mim</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
