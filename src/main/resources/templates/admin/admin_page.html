@@ -37,7 +37,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Sugestão</th>
                     <th scope="col">Ações</th>
-                    <th scope="col">Ações</th>
+                    <th scope="col">Email</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,13 +56,12 @@
                             <button class="btn btn-danger" type="submit">Rejeitar</button>
                         </form>
                     </td>
-
-
-                 </tr>
-                <tr th:each="username : ${username}">
+                    <tr th:each="username : ${username}">
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td th:text="${username.username}"></td>
-                </tr>
-
+                 </tr>
                 </tbody>
             </table>
         </div>

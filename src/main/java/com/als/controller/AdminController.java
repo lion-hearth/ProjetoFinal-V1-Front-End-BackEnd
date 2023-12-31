@@ -31,8 +31,8 @@ public class AdminController {
     @GetMapping("/admin_page")  // Caminho da página admin_page
     public ModelAndView showAdminPage(Model model,User userr) {
         List<Suggestion> suggestions = suggestionService.getAllSuggestions();
-        List<User> user = userRepository.findByUsername(userr.getUsername());
-        model.addAttribute("username", username);
+        List<User> listUsername = userRepository.findAll();
+        model.addAttribute("username", listUsername);
         model.addAttribute("suggestions", suggestions);
         return new ModelAndView("admin/admin_page");
     }
