@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
         <div class="sec1">
             <p class="heading">Bem Vindo Admin</p>
         </div>
-        <div>
+        <div class="header-icons">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
             </svg>
@@ -30,22 +30,23 @@
 <section>
     <div class="main">
         <div class="sub3">
-            <!-- Substitua a tabela existente pela tabela de sugestões -->
+            <!--  tabela de sugestões -->
             <table class="table">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Sugestão</th>
                     <th scope="col">Ações</th>
+                    <th scope="col">Ações</th>
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Utilize Thymeleaf para iterar sobre as sugestões recebidas do backend -->
+                <!--  sugestões recebidas do backend -->
                 <tr th:each="suggestion : ${suggestions}">
                     <td th:text="${suggestion.id}"></td>
-                    <td th:text="${suggestion.text}"></td>
-                    <td>
-                        <!-- Adicione botões de aprovação e rejeição, chamando as respectivas funções no backend -->
+
+                    <td class="text-box" th:text="${suggestion.text}"></td>
+                    <td class="actions">
                         <form th:action="@{/admin/suggestions/approve}" method="post">
                             <input type="hidden" th:name="suggestionId" th:value="${suggestion.id}" />
                             <button class="btn btn-success" type="submit">Aprovar</button>
@@ -55,14 +56,19 @@
                             <button class="btn btn-danger" type="submit">Rejeitar</button>
                         </form>
                     </td>
-                </tr>
-                </tbody>
 
+
+                 </tr>
+                <tr th:each="username : ${username}">
+                    <td th:text="${username.username}"></td>
+                </tr>
+
+                </tbody>
             </table>
         </div>
     </div>
 </section>
 
 </body>
-</body>
 </html>
+

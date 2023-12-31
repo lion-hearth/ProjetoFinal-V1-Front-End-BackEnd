@@ -17,7 +17,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String showLoginPage() {
-        return "front/login_page";
+        return "login_page/login_page";
     }
 
     @PostMapping("/login")
@@ -28,13 +28,15 @@ public class LoginController {
 
         if (userService.authenticate(username, password)) {
             if (isAdmin) {
-                return "redirect:/admin/admin_page"; // Redireciona para a página admin_page se for administrador
+                return "redirect:/admin/admin_page";
             } else {
-                return "redirect:/user_page"; // Redireciona para a página user_page se não for administrador
+                return "redirect:/user_page";
             }
         } else {
             model.addAttribute("error", "Credenciais inválidas. Tente novamente.");
-            return "front/login_page";
+            return "login_page/login_page";
         }
     }
 }
+
+

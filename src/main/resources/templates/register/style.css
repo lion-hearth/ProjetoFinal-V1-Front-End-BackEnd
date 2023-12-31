@@ -1,20 +1,60 @@
 body {
-    background-color: #f8f9fa; /* Cor de fundo da página */
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Cor de fundo da página */
+  color: #333; /* Cor do texto */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    background-color: #ffffff; /* Cor de fundo do contêiner */
-    padding: 20px; /* Adiciona algum espaço ao redor do conteúdo dentro do contêiner */
-    border-radius: 8px; /* Adiciona bordas arredondadas ao contêiner */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao contêiner */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #007bff; /* Cor de fundo do cabeçalho */
+  color: #fff; /* Cor do texto do cabeçalho */
 }
 
-.btn-primary {
-    background-color: #007bff; /* Cor de fundo do botão primário */
-    border-color: #007bff; /* Cor da borda do botão primário */
+.heading {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3; /* Cor de fundo do botão primário ao passar o mouse sobre ele */
-    border-color: #0056b3; /* Cor da borda do botão primário ao passar o mouse sobre ele */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.text-box {
+    max-width: 80%; /* Ajuste o valor conforme necessário */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }

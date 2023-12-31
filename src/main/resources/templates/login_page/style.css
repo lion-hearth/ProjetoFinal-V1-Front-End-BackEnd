@@ -1,0 +1,28 @@
+body {
+    background-color: #f8f9fa; /* Cor de fundo da página */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-check {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Cor do botão */
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+    border-color: #0056b3;
+}
+
+/* Adicione mais estilos conforme necessário */
