@@ -44,23 +44,20 @@ public class LoginController {
     }
 
     @PostMapping("/user_register")
-    public String registerUser(@RequestParam String nome,
+    public String registerUser(@RequestParam String username,
+                               @RequestParam String nome,
                                @RequestParam String email,
                                @RequestParam String password,
                                Model model) {
         // Lógica para salvar o usuário
         User user = new User();
+        user.setUsername(username);
         user.setNome(nome);
         user.setEmail(email);
         user.setPassword(password);
 
-
         userService.saveUser(user);
 
-
-        return "redirect:/user_register?success=true";
+        return "redirect:/login?success=true";
     }
-
 }
-
-
