@@ -18,14 +18,11 @@ public class RegistrationController {
     @GetMapping("/register")
     public String showRegistrationPage(Model model) {
         model.addAttribute("user", new User());
-        return "register/registration"; // Atualizado para o novo nome do arquivo HTML
+        return "register/registration";
     }
 
-
-
-
     @PostMapping("/register")
-    public String registerUser(@ModelAttribute User user) {
+    public String registerUser(@ModelAttribute User user, Model model) {
         // Adicione lógica de validação e salvamento de usuário conforme necessário
         // Certifique-se de ajustar isso de acordo com suas necessidades
 
@@ -34,7 +31,17 @@ public class RegistrationController {
             user.setAdmin(true);
         }
 
+        // Verifica se o e-mail não é nulo ou vazio antes de definir o username
+        if (user.getEmail() != null && !user.getEmail().isEmpty()) {
+            user.setUsername(user.getEmail());
+        }
+
         userService.saveUser(user);
-        return "redirect:/login"; // Redireciona para a página de login após o cadastro
+
+        // Adiciona uma mensagem à model para ser exibida na página
+        model.addAttribute("successMessage", "Cadastro realizado com sucesso!");
+
+        // Redireciona para a página de login
+        return "redirect:/login";
     }
 }

@@ -50,4 +50,10 @@ public class AdminController {
         suggestionService.rejectSuggestion(suggestionId);
         return ResponseEntity.ok("Sugestão rejeitada com sucesso!");
     }
+
+    @GetMapping("/user_register")
+    public String showUserRegisterPage(Model model) {
+        model.addAttribute("success", true); // Adiciona o atributo de sucesso ao modelo
+        return "admin/user_register"; // Nome da página de cadastro de usuários
+    }
 }

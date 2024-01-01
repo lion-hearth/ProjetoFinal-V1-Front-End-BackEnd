@@ -37,6 +37,30 @@ public class LoginController {
             return "login_page/login_page";
         }
     }
+
+    @GetMapping("/user_register")
+    public String showUserRegisterPage() {
+        return "user_register"; // Corrija o nome do template se necessário
+    }
+
+    @PostMapping("/user_register")
+    public String registerUser(@RequestParam String nome,
+                               @RequestParam String email,
+                               @RequestParam String password,
+                               Model model) {
+        // Lógica para salvar o usuário
+        User user = new User();
+        user.setNome(nome);
+        user.setEmail(email);
+        user.setPassword(password);
+
+
+        userService.saveUser(user);
+
+
+        return "redirect:/user_register?success=true";
+    }
+
 }
 
 
