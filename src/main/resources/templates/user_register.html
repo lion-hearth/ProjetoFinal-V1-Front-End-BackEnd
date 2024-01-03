@@ -12,11 +12,10 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h2 class="text-center">Cadastro de Usuário</h2>
-            <form th:action="@{/user_register}" method="post">
+            <form th:action="@{/registerUser}" method="post">
                 <div class="form-group">
-                    <label for="username">Usuário:</label>
-                    <!-- Corrigido o nome do campo para 'nome' -->
-                    <input type="text" class="form-control" id="username" name="nome" placeholder="Digite seu nome de usuário" required>
+                    <label for="nome">Nome de Usuário:</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome de usuário" required>
                 </div>
 
                 <div class="form-group">
@@ -29,7 +28,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
             </form>
-            <div th:if="${param.success}" class="alert alert-success">
+            <div th:if="${param.success}" class="alert alert-success mt-3">
                 <p>Cadastro realizado com sucesso. Faça o login.</p>
             </div>
         </div>

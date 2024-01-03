@@ -57,8 +57,19 @@
             <br>
             <form id="suggestionForm" th:action="@{/api/suggestions}" method="post">
                 <div class="form-group">
-                    <label for="comment"></label>
-                    <textarea class="form-control" rows="5" id="comment" name="suggestion" placeholder="Digite sua sugestão aqui" maxlength="500"></textarea>
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Sugestão:</label>
+                    <textarea class="form-control" rows="5" id="comment" name="sugestao" placeholder="Digite sua  sugestão como o exemplo abaixo:
+  Email UFN:
+  Nome:
+  Sugestão: Então eu queria sugerir que pipipi popopo bla bla bla" maxlength="500"></textarea>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="submitSuggestion()">Enviar</button>
             </form>
@@ -68,22 +79,30 @@
 
 <script>
     function submitSuggestion() {
-        var suggestionText = document.getElementById("comment").value;
+        var email = document.getElementById("email").value;
+        var nome = document.getElementById("nome").value;
+        var sugestao = document.getElementById("comment").value;
 
-        // Verificar se o texto da sugestão está vazia
-        if (!suggestionText.trim()) {
-            alert("A sugestão não pode estar vazia.");
+        // Verificar se algum campo está vazio
+        if (!email.trim() || !nome.trim() || !sugestao.trim()) {
+            alert("Todos os campos devem ser preenchidos.");
             return;
         }
 
         // Verificar se o texto da sugestão excede o limite
         var maxCharacters = 1000;
-        if (suggestionText.length > maxCharacters) {
+        if (sugestao.length > maxCharacters) {
             alert("A sugestão excede o limite de caracteres permitido (máximo " + maxCharacters + " caracteres).");
             return;
         }
 
-        axios.post('/api/suggestions', suggestionText)
+        var suggestionData = {
+            email: email,
+            nome: nome,
+            sugestao: sugestao
+        };
+
+        axios.post('/api/suggestions', suggestionData)
             .then(function (response) {
                 alert(response.data);
                 document.getElementById("suggestionForm").reset(); // Limpar o formulário

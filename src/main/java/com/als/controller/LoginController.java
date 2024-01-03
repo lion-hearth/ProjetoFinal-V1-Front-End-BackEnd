@@ -28,7 +28,7 @@ public class LoginController {
 
         if (userService.authenticate(username, password)) {
             if (isAdmin) {
-                return "redirect:/admin/admin_page";
+                return "redirect:/admin/admin_page?email=Email Padrão&nome=Nome Padrão&sugestao=Sugestão Padrão";
             } else {
                 return "redirect:/user_register";
             }

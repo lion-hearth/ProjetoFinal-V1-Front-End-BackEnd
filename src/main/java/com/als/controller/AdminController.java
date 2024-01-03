@@ -21,6 +21,7 @@ public class AdminController {
     private SuggestionService suggestionService;
     @Autowired
     private UserRepository userRepository;
+
     @GetMapping("/suggestions")
     public ModelAndView showSuggestions(Model model) {
         List<Suggestion> suggestions = suggestionService.getAllSuggestions();
@@ -29,11 +30,21 @@ public class AdminController {
     }
 
     @GetMapping("/admin_page")  // Caminho da página admin_page
-    public ModelAndView showAdminPage(Model model,User userr) {
+    public ModelAndView showAdminPage(Model model,
+                                      @RequestParam(name = "email", required = false, defaultValue = "Email Padrão") String email,
+                                      @RequestParam(name = "nome", required = false, defaultValue = "Nome Padrão") String nome,
+                                      @RequestParam(name = "sugestao", required = false, defaultValue = "Sugestão Padrão") String sugestao) {
         List<Suggestion> suggestions = suggestionService.getAllSuggestions();
         List<User> listUsername = userRepository.findAll();
         model.addAttribute("username", listUsername);
         model.addAttribute("suggestions", suggestions);
+        model.addAttribute("email", email);
+        model.addAttribute("nome", nome);
+        model.addAttribute("sugestao", sugestao);
+
+        // Agora você pode usar os dados como necessário
+        // Certifique-se de validar e processar esses dados adequadamente
+
         return new ModelAndView("admin/admin_page");
     }
 

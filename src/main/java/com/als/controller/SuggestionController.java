@@ -19,7 +19,7 @@ public class SuggestionController {
     @ResponseBody
     public ResponseEntity<String> submitSuggestion(@RequestBody String suggestionText) {
         // Validar o comprimento da sugestão
-        int maxCharacters = 1000; // Novo limite de caracteres
+        int maxCharacters = 1000;
         if (suggestionText.length() > maxCharacters) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("A sugestão excede o limite de caracteres permitido (máximo " + maxCharacters + " caracteres).");

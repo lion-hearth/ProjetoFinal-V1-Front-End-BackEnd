@@ -23,8 +23,7 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user, Model model) {
-        // Adicione lógica de validação e salvamento de usuário conforme necessário
-        // Certifique-se de ajustar isso de acordo com suas necessidades
+
 
         // Define o usuário como administrador se a opção estiver marcada
         if (user.isAdmin()) {
@@ -38,7 +37,7 @@ public class RegistrationController {
 
         userService.saveUser(user);
 
-        // Adiciona uma mensagem à model para ser exibida na página
+        //  model para ser exibida na página
         model.addAttribute("successMessage", "Cadastro realizado com sucesso!");
 
         // Redireciona para a página de login
