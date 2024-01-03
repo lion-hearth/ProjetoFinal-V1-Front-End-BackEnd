@@ -38,7 +38,6 @@ public class AdminController {
         List<User> listUsername = userRepository.findAll();
         model.addAttribute("username", listUsername);
         model.addAttribute("suggestions", suggestions);
-        model.addAttribute("email", email);
         model.addAttribute("nome", nome);
         model.addAttribute("sugestao", sugestao);
 
