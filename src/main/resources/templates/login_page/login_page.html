@@ -26,18 +26,20 @@
                     <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="admin" name="admin">
-                    <label class="form-check-label" for="admin">Administrador</label>
+                    <input type="checkbox" class="form-check-input" id="adminCheckbox" name="admin">
+                    <label class="form-check-label" for="adminCheckbox">Administrador</label>
                 </div>
+
                 <button type="submit" class="btn btn-primary mt-2">Enviar</button>
-                <div class="container mt-4">
-                    <div class="row">
-                        <div class="col-sm-6 offset-sm-3">
-                            <a th:href="@{/user_register}" class="btn btn-secondary mt-2">Registrar</a>
-                        </div>
-                    </div>
             </form>
-            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <a th:href="@{/user_register}" class="btn btn-secondary mt-2">Registrar</a>
         </div>
     </div>
 </div>
