@@ -30,7 +30,7 @@ public class LoginController {
             if (isAdmin) {
                 return "redirect:/admin/admin_page";
             } else {
-                return "redirect:/user_page";
+                return "redirect:/user_register";
             }
         } else {
             model.addAttribute("error", "Credenciais inválidas. Tente novamente.");
