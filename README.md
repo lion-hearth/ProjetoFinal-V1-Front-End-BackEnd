@@ -38,7 +38,7 @@ Frontend:
   <li>Java na Versão 17 Instalado em sua Máquina </li>
   <li> Uma IDE que possua suporte a java <strong>recomendo o Intelij nesse caso </li>
   <li> Após baixar o código execute a aplicação  Apls Application  </li>
-  <li><a href="https://www.linkedin.com/in/richardmelodev/" target="_blank">Dúvidas?</a></li>
+  <li><a class="nav-link" href="https://www.linkedin.com/in/richardmelodev/" target="_blank">Dúvidas?</a></li>
 </ul>
 
 
