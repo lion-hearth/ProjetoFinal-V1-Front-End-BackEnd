@@ -39,7 +39,7 @@ Frontend:
   <li> Uma IDE que possua suporte a java <strong>recomendo o Intelij nesse caso </li>
   <li> Após baixar o código execute a aplicação  Apls Application  </li>
   <li><a href="https://www.linkedin.com/in/richardmelodev/" target="_blank">Dúvidas?</a></li>
-##</ul>
+</ul>
 
 
 <p> Na primeira imagem é possivel viazualizar a primeira imagem do sistema onde é possivel inserir o e-mail nome e a sugestão do usuário </p>
